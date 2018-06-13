@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ToyStore.Models.TOrder>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TBuyer.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TProduct.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TProduct.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TBuyer.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TProduct.Name)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.TProduct.Price) Грн.
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity) шт
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount) Грн.
+            <td>
+                @Html.DisplayFor(modelItem => item.Date, "Data")
+            </td>
+            <td>
+                @Html.ActionLink("Удалить", "Delete", new { id=item.idOrder })
+            </td>
+   
+        </tr>
+    }
+        
+    
+    </table>
+    <p>Набранно товаров на сумму @ViewBag.totalAmount Грн.</p>
+    @Html.ActionLink("Вернутся к покупкам", "index", "Home")
+</body>
+</html>

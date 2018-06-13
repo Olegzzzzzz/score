@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>@ViewBag.Title – магазин</title>
+  
+</head>
+<body>
+    <pre>Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+</pre>
+    @Html.Action("HeaderList", "Header")
+    @*@Html.Action("ShowUser", "Header")
+   @Html.Action("LogOut", "Header")*@
+
+    <hr />
+
+    @RenderBody()
+    <hr />
+<pre>Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+</pre>
+
+</body>
+</html>

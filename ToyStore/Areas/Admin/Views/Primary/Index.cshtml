@@ -1,0 +1,30 @@
+﻿
+@{
+////Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Меню</title>
+</head>
+<body>
+    <div> 
+        @Html.ActionLink("Пользователи", "Index", "TBuyers")
+        </div>
+    <div>
+        @Html.ActionLink("Категории", "Index", "TCategories")
+        </div>
+    <div>
+        @Html.ActionLink("Подкатегории", "Index", "TSubcategories")
+    </div>
+    <div>
+        @Html.ActionLink("Товары", "Index", "TProducts")
+    </div>
+    <div>
+        @Html.ActionLink("Заказы", "Index", "TOrders")
+    </div>
+</body>
+</html>

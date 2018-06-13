@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ToyStore.Models.TCategorie>
+<div class="menu-wrapper">
+    <div class="menu-main">
+   
+        <ul class="menu">
+            @foreach (var str in Model)
+            {
+                <li>
+                    @Html.ActionLink((string)str.Category, "Index", "Home", new { idcategorie = str.idCategorie }, null)
+                </li>
+
+            }
+            @if (ViewBag.onAdmin)
+            {
+                @Html.ActionLink("Админпанель", "Index", "Admin/Primary")
+            }
+
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>@ViewBag.Title – магазин</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+   
+<div class="header">
+    <pre>Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+      Header Header Header Header Header Header Header Header
+</pre>
+    <div class="menu-right">
+        @Html.Action("ShowUser", "Header")<br />
+        @Html.Action("LogOut", "Header")<br />
+        @Html.ActionLink("Регистрация", "Register", "Access/Account")<br />
+        @Html.ActionLink("Корзина", "Index", "TOrders")<br />
+    </div>
+ 
+</div>
+    
+
+            @Html.Action("HeaderList", "Header")
+           
+    
+   
+
+    <hr />
+
+    @RenderBody()
+    <hr />
+<pre>Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+    Footer Footer Footer Footer Footer Footer Footer Footer
+</pre>
+
+</body>
+</html>

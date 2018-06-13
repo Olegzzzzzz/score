@@ -1,0 +1,8 @@
+﻿@if (ViewBag.LogOut)
+{
+@Html.ActionLink("Выход", "Logoff", "Access/Account")
+}
+else
+{ 
+@Html.ActionLink("Вход", "Login", "Access/Account")
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ToyStore.Models.TSubcategory>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Список подкатегорий</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Вернутся к списку", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Subcategory)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subcategory)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id=item.idSubcategory }) |
+                @Html.ActionLink("Удалить", "Delete", new { id=item.idSubcategory })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

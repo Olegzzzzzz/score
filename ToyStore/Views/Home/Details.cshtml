@@ -1,0 +1,99 @@
+﻿@model ToyStore.Models.TProduct
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Детально</title>
+</head>
+<body>
+    <div>
+        <h4>Товар</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TCategorie.Category)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TCategorie.Category)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TSubcategory.Subcategory)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TSubcategory.Subcategory)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture)
+            </dt>
+    
+            <dd>
+                @Html.Raw("<img style='width:80px; height:60px;' src=\"data:image/jpeg;base64,"
+                                + Convert.ToBase64String(Model.Picture) + "\" />")
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Manufacturer)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Вернутся обратно", "Index")
+       
+
+      
+    </p>
+
+@using (Html.BeginForm("Purchase", "Purchases"))
+{
+    <input type="hidden" name="C_idProduct" value="@Model.idProduct">
+    <label>Выберите количество: </label>
+    <input type="number" size="3" name="Quantity" min="1" max="1000" value="1">
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Купить" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+</body>
+</html>
